@@ -35,10 +35,10 @@ class Student extends Person{
         }
 
     listsSubjects(){
-        this.favSubjects.forEach(function(listSubject){
-        // console.log(listSubject)
-        // return listSubject
-        })
+        this.favSubjects.forEach(element => {
+            console.log(element)
+            return element
+        });
     }
 
     PRAssignment(subject){
