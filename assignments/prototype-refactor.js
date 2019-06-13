@@ -49,38 +49,41 @@ Prototype Refactor
   * Instances of Humanoid should have all of the same properties as CharacterStats and GameObject.
   * Instances of CharacterStats should have all of the same properties as GameObject.
 */
+// class GameObject{
+//     constructor(attributes) {
+//     this.name = attributes.name
+//     this.createdAt = attributes.createdAt
+//     this.dimensions = attributes.dimensions
+//     }
+//     destroy(){
+//     return `${this.name} was removed from the game`
+//   }
+// }
 
-function GameObject(attributes) {
-    this.name = attributes.name
-    this.createdAt= attributes.createdAt
-    this.dimensions = attributes.dimensions
-  }
-  GameObject.prototype.destroy= function(){
-    return `${this.name} was removed from the game`
-  }
   
-  function CharacterStats(attributes){
-    GameObject.call(this, attributes)
-    this.healthPoints = attributes.healthPoints
-  }
+// class CharacterStats extends GameObject{
+//     constructor(attributes){
+//     super(attributes)
+//     this.healthPoints = attributes.healthPoints
+//   }
+//   takeDamage (){
+//     return `${this.name} took damage.`
+//   }
+// }
+
   
-  CharacterStats.prototype = Object.create(GameObject.prototype)
-  CharacterStats.prototype.takeDamage = function(){
-    return `${this.name} took damage.`
-  }
-  
-  function Humanoid(attributes){
-    CharacterStats.call(this, attributes)
-    this.language = attributes.language
-    this.weapons = attributes.weapons
-    this.team = attributes.team
-  }
-  
-  Humanoid.prototype = Object.create(CharacterStats.prototype)
-  Humanoid.prototype.greet = function(){
-    return `${this.name} offers a greeting in ${this.language}`
-  }
-  
+// class Humanoid extends CharacterStats{
+//     constructor (attributes){
+//         super(attributes)
+//         this.language = attributes.language
+//         this.weapons = attributes.weapons
+//         this.team = attributes.team
+//   }
+//   greet(){
+//     return `${this.name} offers a greeting in ${this.language}`
+//   }
+// }  
+    
   
   
   
